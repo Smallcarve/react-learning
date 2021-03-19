@@ -2,13 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>hello_react</title>
+    <title>02虚拟DOM的两种创建方式</title>
     <script src="JS/react.development.js"></script>
     <script src="JS/react-dom.development.js"></script>
     <script src="JS/babel.min.js"></script>
     <script type="text/babel">
       window.onload = function () {
-        var VDOM = <h1>hello react</h1>;
+        //JSX创建虚拟DOM
+        var VDOM = (
+          <h1 id="title">
+            <span>hello react</span>
+          </h1>
+        );
+        //JS创建虚拟DOM
+        // const VDOM = React.createElement(
+        //   "h1",
+        //   { id: "title" },
+        //   React.createElement("span", {}, "hello react")
+        // );
+        //渲染虚拟DOM到页面
         ReactDOM.render(VDOM, document.getElementById("test"));
       };
     </script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>03虚拟DOM与真实DOM</title>
+    <script src="JS/react.development.js"></script>
+    <script src="JS/react-dom.development.js"></script>
+    <script src="JS/babel.min.js"></script>
+    <script type="text/babel">
+      window.onload = function () {
+        //创建虚拟DOM
+        var VDOM = (
+          <h1>
+            <span>hello react</span>
+          </h1>
+        );
+        //渲染虚拟DOM到页面
+        ReactDOM.render(VDOM, document.getElementById("test"));
+        //打印虚拟DOM
+        console.log(VDOM);
+        const TDOM = document.getElementById("test");
+        //打印真实DOM
+        console.log(TDOM);
+        //真实DOM属性多于虚拟DOM
+      };
+    </script>
+  </head>
+  <body>
+    <div id="test"></div>
+  </body>
+</html>
